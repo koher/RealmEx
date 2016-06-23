@@ -18,6 +18,7 @@
 		D6B2032E1D1C37CC0071152D /* PropertyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2032A1D1C37CC0071152D /* PropertyName.swift */; };
 		D6B2032F1D1C37CC0071152D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2032B1D1C37CC0071152D /* Results.swift */; };
 		D6B203301D1C37CC0071152D /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2032C1D1C37CC0071152D /* Values.swift */; };
+		D6B203321D1C38540071152D /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B203311D1C38540071152D /* Dog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		D6B2032A1D1C37CC0071152D /* PropertyName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyName.swift; sourceTree = "<group>"; };
 		D6B2032B1D1C37CC0071152D /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D6B2032C1D1C37CC0071152D /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		D6B203311D1C38540071152D /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				D6B203011D1BFC9A0071152D /* RealmExTests.swift */,
 				D6B203031D1BFC9A0071152D /* Info.plist */,
+				D6B203311D1C38540071152D /* Dog.swift */,
 			);
 			path = RealmExTests;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B203321D1C38540071152D /* Dog.swift in Sources */,
 				D6B203021D1BFC9A0071152D /* RealmExTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
