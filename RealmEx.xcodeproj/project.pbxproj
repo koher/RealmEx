@@ -14,6 +14,10 @@
 		D6B203261D1C375F0071152D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B203241D1C375F0071152D /* RealmSwift.framework */; };
 		D6B203271D1C37660071152D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B203231D1C375E0071152D /* Realm.framework */; };
 		D6B203281D1C37660071152D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B203241D1C375F0071152D /* RealmSwift.framework */; };
+		D6B2032D1D1C37CC0071152D /* Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B203291D1C37CC0071152D /* Predicates.swift */; };
+		D6B2032E1D1C37CC0071152D /* PropertyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2032A1D1C37CC0071152D /* PropertyName.swift */; };
+		D6B2032F1D1C37CC0071152D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2032B1D1C37CC0071152D /* Results.swift */; };
+		D6B203301D1C37CC0071152D /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2032C1D1C37CC0071152D /* Values.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,10 @@
 		D6B203031D1BFC9A0071152D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6B203231D1C375E0071152D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		D6B203241D1C375F0071152D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		D6B203291D1C37CC0071152D /* Predicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predicates.swift; sourceTree = "<group>"; };
+		D6B2032A1D1C37CC0071152D /* PropertyName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyName.swift; sourceTree = "<group>"; };
+		D6B2032B1D1C37CC0071152D /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		D6B2032C1D1C37CC0071152D /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,10 @@
 			children = (
 				D6B202F51D1BFC9A0071152D /* RealmEx.h */,
 				D6B202F71D1BFC9A0071152D /* Info.plist */,
+				D6B2032B1D1C37CC0071152D /* Results.swift */,
+				D6B2032C1D1C37CC0071152D /* Values.swift */,
+				D6B203291D1C37CC0071152D /* Predicates.swift */,
+				D6B2032A1D1C37CC0071152D /* PropertyName.swift */,
 			);
 			path = RealmEx;
 			sourceTree = "<group>";
@@ -206,6 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B2032F1D1C37CC0071152D /* Results.swift in Sources */,
+				D6B2032D1D1C37CC0071152D /* Predicates.swift in Sources */,
+				D6B2032E1D1C37CC0071152D /* PropertyName.swift in Sources */,
+				D6B203301D1C37CC0071152D /* Values.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +338,7 @@
 		D6B203071D1BFC9A0071152D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -336,12 +353,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.RealmEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D6B203081D1BFC9A0071152D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
