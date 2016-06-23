@@ -24,4 +24,23 @@ class RealmExTests: XCTestCase {
             XCTAssertEqual(selected.last!.name, "name0123464")
         }
     }
+    
+    func testExample() {
+        /**/ let realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "RealmExTests"))
+        
+        /**/ try! realm.write {
+        /**/     for i in 0...20 {
+        /**/         let dog = Dog()
+        /**/         dog.name = String(format: "name%07d", i)
+        /**/         dog.age = i
+        /**/         realm.add(dog)
+        /**/     }
+        /**/ }
+
+        let pups = realm.objects(Dog.self).filter { "age" < 2 }
+        let dogs = realm.objects(Dog.self).filter { 2 <= "age" && "age" < 5 }
+        
+        /**/ XCTAssertEqual(pups.count, 2)
+        /**/ XCTAssertEqual(dogs.count, 3)
+    }
 }
