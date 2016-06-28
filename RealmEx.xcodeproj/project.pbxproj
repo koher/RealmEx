@@ -19,6 +19,8 @@
 		D6B2032F1D1C37CC0071152D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2032B1D1C37CC0071152D /* Results.swift */; };
 		D6B203301D1C37CC0071152D /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2032C1D1C37CC0071152D /* Values.swift */; };
 		D6B203321D1C38540071152D /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B203311D1C38540071152D /* Dog.swift */; };
+		D6B203341D1CCD840071152D /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6B203231D1C375E0071152D /* Realm.framework */; };
+		D6B203351D1CCD840071152D /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6B203241D1C375F0071152D /* RealmSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,20 @@
 			remoteInfo = RealmEx;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D6B203331D1CCD6C0071152D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				D6B203341D1CCD840071152D /* Realm.framework in CopyFiles */,
+				D6B203351D1CCD840071152D /* RealmSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D6B202F21D1BFC9A0071152D /* RealmEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +151,7 @@
 				D6B202EE1D1BFC9A0071152D /* Frameworks */,
 				D6B202EF1D1BFC9A0071152D /* Headers */,
 				D6B202F01D1BFC9A0071152D /* Resources */,
+				D6B203331D1CCD6C0071152D /* CopyFiles */,
 			);
 			buildRules = (
 			);
