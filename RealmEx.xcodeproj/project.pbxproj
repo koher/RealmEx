@@ -21,6 +21,7 @@
 		D6B203321D1C38540071152D /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B203311D1C38540071152D /* Dog.swift */; };
 		D6B203341D1CCD840071152D /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6B203231D1C375E0071152D /* Realm.framework */; };
 		D6B203351D1CCD840071152D /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6B203241D1C375F0071152D /* RealmSwift.framework */; };
+		D6B203371D1D35DB0071152D /* RealmPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B203361D1D35DB0071152D /* RealmPerformanceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D6B2032B1D1C37CC0071152D /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D6B2032C1D1C37CC0071152D /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		D6B203311D1C38540071152D /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		D6B203361D1D35DB0071152D /* RealmPerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPerformanceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				D6B203011D1BFC9A0071152D /* RealmExTests.swift */,
+				D6B203361D1D35DB0071152D /* RealmPerformanceTest.swift */,
 				D6B203031D1BFC9A0071152D /* Info.plist */,
 				D6B203311D1C38540071152D /* Dog.swift */,
 			);
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6B203321D1C38540071152D /* Dog.swift in Sources */,
+				D6B203371D1D35DB0071152D /* RealmPerformanceTest.swift in Sources */,
 				D6B203021D1BFC9A0071152D /* RealmExTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
