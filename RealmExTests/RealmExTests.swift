@@ -37,10 +37,22 @@ class RealmExTests: XCTestCase {
         /**/     }
         /**/ }
 
-        let pups = realm.objects(Dog.self).filter { "age" < 2 }
-        let dogs = realm.objects(Dog.self).filter { 2 <= "age" && "age" < 5 }
+        /**/ do {
+            // without RealmEx
+            let pups = realm.objects(Dog.self).filter("age < 2")
+            let dogs = realm.objects(Dog.self).filter("2 <= age AND age < 5")
+            
+            /**/ XCTAssertEqual(pups.count, 2)
+            /**/ XCTAssertEqual(dogs.count, 3)
+        /**/ }
         
-        /**/ XCTAssertEqual(pups.count, 2)
-        /**/ XCTAssertEqual(dogs.count, 3)
+        /**/ do {
+            // with RealmEx
+            let pups = realm.objects(Dog.self).filter { "age" < 2 }
+            let dogs = realm.objects(Dog.self).filter { 2 <= "age" && "age" < 5 }
+            
+            /**/ XCTAssertEqual(pups.count, 2)
+            /**/ XCTAssertEqual(dogs.count, 3)
+        /**/ }
     }
 }
