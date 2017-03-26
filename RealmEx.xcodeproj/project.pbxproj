@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D67684351E87AD150083FB9D /* MetaObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67684341E87AD150083FB9D /* MetaObjects.swift */; };
 		D6B202F61D1BFC9A0071152D /* RealmEx.h in Headers */ = {isa = PBXBuildFile; fileRef = D6B202F51D1BFC9A0071152D /* RealmEx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6B202FD1D1BFC9A0071152D /* RealmEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B202F21D1BFC9A0071152D /* RealmEx.framework */; };
 		D6B203021D1BFC9A0071152D /* RealmExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B203011D1BFC9A0071152D /* RealmExTests.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D67684341E87AD150083FB9D /* MetaObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaObjects.swift; sourceTree = "<group>"; };
 		D6B202F21D1BFC9A0071152D /* RealmEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B202F51D1BFC9A0071152D /* RealmEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmEx.h; sourceTree = "<group>"; };
 		D6B202F71D1BFC9A0071152D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				D6B2032C1D1C37CC0071152D /* Values.swift */,
 				D6B203291D1C37CC0071152D /* Predicates.swift */,
 				D6B2032A1D1C37CC0071152D /* PropertyName.swift */,
+				D67684341E87AD150083FB9D /* MetaObjects.swift */,
 			);
 			path = RealmEx;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				D6B2032F1D1C37CC0071152D /* Results.swift in Sources */,
 				D6B2032D1D1C37CC0071152D /* Predicates.swift in Sources */,
 				D6B2032E1D1C37CC0071152D /* PropertyName.swift in Sources */,
+				D67684351E87AD150083FB9D /* MetaObjects.swift in Sources */,
 				D6B203301D1C37CC0071152D /* Values.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

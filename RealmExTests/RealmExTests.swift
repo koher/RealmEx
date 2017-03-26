@@ -54,5 +54,14 @@ class RealmExTests: XCTestCase {
             /**/ XCTAssertEqual(pups.count, 2)
             /**/ XCTAssertEqual(dogs.count, 3)
         /**/ }
+        
+        /**/ do {
+            // with RealmEx using `MetaObject`
+            let pups = realm.objects(Dog.self).filter { $0.age < 2 }
+            let dogs = realm.objects(Dog.self).filter { 2 <= $0.age && $0.age < 5 }
+            
+            /**/ XCTAssertEqual(pups.count, 2)
+            /**/ XCTAssertEqual(dogs.count, 3)
+        /**/ }
     }
 }
