@@ -6,43 +6,43 @@ public protocol RealmExValue {
 
 extension Int: RealmExValue {
     public var RealmEx_object: AnyObject {
-        return NSNumber(integer: self)
+        return NSNumber(value: self as Int)
     }
 }
 
 extension Int8: RealmExValue {
     public var RealmEx_object: AnyObject {
-        return NSNumber(char: self)
+        return NSNumber(value: self as Int8)
     }
 }
 
 extension Int16: RealmExValue {
     public var RealmEx_object: AnyObject {
-        return NSNumber(short: self)
+        return NSNumber(value: self as Int16)
     }
 }
 
 extension Int32: RealmExValue {
     public var RealmEx_object: AnyObject {
-        return NSNumber(int: self)
+        return NSNumber(value: self as Int32)
     }
 }
 
 extension Int64: RealmExValue {
     public var RealmEx_object: AnyObject {
-        return NSNumber(longLong: self)
+        return NSNumber(value: self as Int64)
     }
 }
 
 extension Float: RealmExValue {
     public var RealmEx_object: AnyObject {
-        return NSNumber(float: self)
+        return NSNumber(value: self as Float)
     }
 }
 
 extension Double: RealmExValue {
     public var RealmEx_object: AnyObject {
-        return NSNumber(double: self)
+        return NSNumber(value: self as Double)
     }
 }
 
@@ -52,15 +52,15 @@ extension String: RealmExValue {
     }
 }
 
-extension NSDate: RealmExValue {
+extension Date: RealmExValue {
     public var RealmEx_object: AnyObject {
-        return self
+        return self as AnyObject
     }
 }
 
 public protocol RealmExEquatable: RealmExValue, Equatable {
-    func ==(lhs: PropertyName, rhs: Self) -> RealmExPredicate
-    func ==(lhs: Self, rhs: PropertyName) -> RealmExPredicate
+    static func ==(lhs: PropertyName, rhs: Self) -> RealmExPredicate
+    static func ==(lhs: Self, rhs: PropertyName) -> RealmExPredicate
 }
 
 extension Int:    RealmExEquatable {}
@@ -71,7 +71,7 @@ extension Int64:  RealmExEquatable {}
 extension Float:  RealmExEquatable {}
 extension Double: RealmExEquatable {}
 extension String: RealmExEquatable {}
-extension NSDate: RealmExEquatable {}
+extension Date:   RealmExEquatable {}
 
 public func ==<T: RealmExEquatable>(lhs: PropertyName, rhs: T) -> RealmExPredicate {
     return op(lhs, "==", rhs)
@@ -82,17 +82,17 @@ public func ==<T: RealmExEquatable>(lhs: T, rhs: PropertyName) -> RealmExPredica
 }
 
 public protocol RealmExComparable: RealmExEquatable, Comparable {
-    func <(lhs: PropertyName, rhs: Self) -> RealmExPredicate
-    func <(lhs: Self, rhs: PropertyName) -> RealmExPredicate
+    static func <(lhs: PropertyName, rhs: Self) -> RealmExPredicate
+    static func <(lhs: Self, rhs: PropertyName) -> RealmExPredicate
     
-    func <=(lhs: PropertyName, rhs: Self) -> RealmExPredicate
-    func <=(lhs: Self, rhs: PropertyName) -> RealmExPredicate
+    static func <=(lhs: PropertyName, rhs: Self) -> RealmExPredicate
+    static func <=(lhs: Self, rhs: PropertyName) -> RealmExPredicate
     
-    func >=(lhs: PropertyName, rhs: Self) -> RealmExPredicate
-    func >=(lhs: Self, rhs: PropertyName) -> RealmExPredicate
+    static func >=(lhs: PropertyName, rhs: Self) -> RealmExPredicate
+    static func >=(lhs: Self, rhs: PropertyName) -> RealmExPredicate
     
-    func >(lhs: PropertyName, rhs: Self) -> RealmExPredicate
-    func >(lhs: Self, rhs: PropertyName) -> RealmExPredicate
+    static func >(lhs: PropertyName, rhs: Self) -> RealmExPredicate
+    static func >(lhs: Self, rhs: PropertyName) -> RealmExPredicate
 }
 
 extension Int:    RealmExComparable {}
@@ -102,7 +102,7 @@ extension Int32:  RealmExComparable {}
 extension Int64:  RealmExComparable {}
 extension Float:  RealmExComparable {}
 extension Double: RealmExComparable {}
-extension NSDate: RealmExComparable {}
+extension Date:   RealmExComparable {}
 
 public func <<T: RealmExEquatable>(lhs: PropertyName, rhs: T) -> RealmExPredicate {
     return op(lhs, "<", rhs)
@@ -136,19 +136,10 @@ public func ><T: RealmExEquatable>(lhs: T, rhs: PropertyName) -> RealmExPredicat
     return op(lhs, ">", rhs)
 }
 
-private func op<T: RealmExEquatable>(lhs: PropertyName, _ oparatorName: String, _ rhs: T) -> RealmExSimplePredicate {
+private func op<T: RealmExEquatable>(_ lhs: PropertyName, _ oparatorName: String, _ rhs: T) -> RealmExSimplePredicate {
     return RealmExSimplePredicate(format: "\(lhs.value) \(oparatorName) %@", arguments: [rhs.RealmEx_object])
 }
 
-private func op<T: RealmExEquatable>(lhs: T, _ oparatorName: String, _ rhs: PropertyName) -> RealmExSimplePredicate {
+private func op<T: RealmExEquatable>(_ lhs: T, _ oparatorName: String, _ rhs: PropertyName) -> RealmExSimplePredicate {
     return RealmExSimplePredicate(format: "%@ \(oparatorName) \(rhs.value)", arguments: [lhs.RealmEx_object])
-}
-
-public func <(lhs: NSDate, rhs: NSDate) -> Bool {
-    switch lhs.compare(rhs) {
-    case .OrderedAscending:
-        return true
-    default:
-        return false
-    }
 }

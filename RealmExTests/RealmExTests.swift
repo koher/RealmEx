@@ -15,7 +15,7 @@ class RealmExTests: XCTestCase {
             }
         }
         
-        measureBlock {
+        measure {
             let selected = realm.objects(Dog.self).filter {
                 123456 <= "age" && "age" < 123465
             }

@@ -1,4 +1,3 @@
-// Swift 2.2
 import XCTest
 import Foundation
 import RealmSwift
@@ -19,7 +18,7 @@ class RealmPerformanceTest: XCTestCase {
             }
         }
         
-        measureBlock {
+        measure {
             for _ in 1...numberOfLoops {
                 let key = Int(arc4random() % UInt32(n))
                 let results = realm.objects(Indexed.self).filter("foo = \(key)")
@@ -40,7 +39,7 @@ class RealmPerformanceTest: XCTestCase {
             }
         }
         
-        measureBlock {
+        measure {
             for _ in 1...numberOfLoops {
                 let key = Int(arc4random() % UInt32(n))
                 let results = realm.objects(Unindexed.self).filter("foo = \(key)")
@@ -61,7 +60,7 @@ class RealmPerformanceTest: XCTestCase {
             }
         }
         
-        measureBlock {
+        measure {
             for _ in 1...numberOfLoops {
                 let key = Int(arc4random() % UInt32(n))
                 let results = realm.objects(Indexed.self).filter("baz = %@", "\(key)" as NSString)
@@ -82,7 +81,7 @@ class RealmPerformanceTest: XCTestCase {
             }
         }
         
-        measureBlock {
+        measure {
             for _ in 1...numberOfLoops {
                 let key = Int(arc4random() % UInt32(n))
                 let results = realm.objects(Unindexed.self).filter("baz = %@", "\(key)" as NSString)

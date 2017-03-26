@@ -1,4 +1,4 @@
-public struct PropertyName: StringLiteralConvertible {
+public struct PropertyName: ExpressibleByStringLiteral {
     public let value: String
     
     public init(stringLiteral value: String) {
